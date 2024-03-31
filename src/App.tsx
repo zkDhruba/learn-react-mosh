@@ -3,6 +3,7 @@ import Message from "./Message";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import "./App.css";
 
 function App() {
   const items: string[] = [
