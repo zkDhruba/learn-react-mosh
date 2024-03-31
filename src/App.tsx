@@ -5,22 +5,26 @@ import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
 
 function App() {
-  const [visibility, setVisibility] = useState(false);
+  const items: string[] = [
+    "California",
+    "Dhaka",
+    "Melbourne",
+    "Istanbul",
+    "Moscow",
+    "Oslo",
+  ];
 
-  const handleClickButton = () => {
-    setVisibility(true);
+  const handleSelectedItem = (item: string) => {
+    console.log(item);
   };
 
   return (
     <div>
-      {visibility && (
-        <Alert onAlertClose={() => setVisibility(false)}> My Alert </Alert>
-      )}
-      <Button
-        color="success"
-        text="Click Me"
-        onClickButton={handleClickButton}
-      ></Button>
+      <ListGroup
+        items={items}
+        heading="Cities"
+        onSelectItem={(item) => handleSelectedItem(item)}
+      />
     </div>
   );
 }
