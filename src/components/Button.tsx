@@ -1,15 +1,15 @@
 import { Children, ReactNode } from "react";
 
 interface Props {
-  children: string;
+  text: string;
   color?: "primary" | "secondary" | "warning" | "danger" | "success";
   onClickButton: () => void;
 }
 
-const Button = ({ children, color = "primary", onClickButton }: Props) => {
+const Button = ({ text, color = "primary", onClickButton }: Props) => {
   return (
     <button className={"btn btn-" + color} onClick={onClickButton}>
-      {children}
+      {text}
     </button>
   );
 };
