@@ -3,6 +3,7 @@ import Message from "./Message";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import ReactIcons from "./components/reactIcons";
 import "./App.css";
 
 function App() {
@@ -21,11 +22,12 @@ function App() {
 
   return (
     <div>
-      <ListGroup
+      <ReactIcons />
+      {/* <ListGroup
         items={items}
         heading="Cities"
         onSelectItem={(item) => handleSelectedItem(item)}
-      />
+      /> */}
     </div>
   );
 }
