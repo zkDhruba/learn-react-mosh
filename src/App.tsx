@@ -10,57 +10,21 @@ import Cart from "./components/Cart";
 import ExpandbleText from "./components/ExpandbleText";
 
 function App() {
-  const items: string[] = [
-    "California",
-    "Dhaka",
-    "Melbourne",
-    "Istanbul",
-    "Moscow",
-    "Oslo",
-  ];
-
-  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
-
-  const [maxChars, setMaxChars] = useState(25);
-
-  const [isMore, setIsMore] = useState(false);
-
-  const handleSelectedItem = (item: string) => {
-    console.log(item);
-  };
-
-  const handleOnClear = () => {
-    setCartItems([]);
-  };
-
-  const handleOnClickAction = () => {
-    setMaxChars(500);
-    setIsMore(!isMore);
-    isMore ? setMaxChars(25) : setMaxChars(500);
-    console.log(maxChars, isMore);
-
-    console.log("Clicked");
-  };
-
   return (
     <div>
-      <NavBar cartItemsCount={cartItems.length}></NavBar>
-      <Cart cartItems={cartItems} onClear={handleOnClear}></Cart>
-      <ExpandbleText
-        maxChars={maxChars}
-        onClickAction={handleOnClickAction}
-        isMore={isMore}
-      ></ExpandbleText>
-      {/* <Button
-        text="Click Me"
-        onClickButton={() => console.log("I'm Clicked")}
-      />
-      <ReactIcons /> */}
-      {/* <ListGroup
-        items={items}
-        heading="Cities"
-        onSelectItem={(item) => handleSelectedItem(item)}
-      /> */}
+      <ExpandbleText maxChars={25}>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem illo
+        veniam sit eveniet pariatur, qui officiis? Pariatur consequuntur, odio
+        expedita facilis aliquam eos, vero inventore odit reiciendis nemo
+        consectetur numquam laudantium excepturi recusandae sit placeat nihil,
+        fugit alias! Explicabo corrupti nulla recusandae id! Excepturi porro
+        ipsam nulla reprehenderit quidem sed ullam aliquam labore cupiditate
+        vero dolorum cumque quae hic temporibus earum, molestias odit quia.
+        Similique inventore deleniti veniam sit magni possimus est consectetur
+        hic nihil velit. Tenetur, cum officiis saepe modi temporibus cupiditate,
+        inventore, sed praesentium quae molestiae beatae? Nostrum fugiat tempora
+        quaerat in pariatur officia sunt nam, voluptatem qui.
+      </ExpandbleText>
     </div>
   );
 }
