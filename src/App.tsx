@@ -5,6 +5,8 @@ import Button from "./components/Button/Button";
 import ListGroup from "./components/ListGroup";
 import ReactIcons from "./components/reactIcons";
 import "./App.css";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
 function App() {
   const items: string[] = [
@@ -16,17 +18,25 @@ function App() {
     "Oslo",
   ];
 
+  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
+
   const handleSelectedItem = (item: string) => {
     console.log(item);
   };
 
+  const handleOnClear = () => {
+    setCartItems([]);
+  };
+
   return (
     <div>
-      <Button
+      <NavBar cartItemsCount={cartItems.length}></NavBar>
+      <Cart cartItems={cartItems} onClear={handleOnClear}></Cart>
+      {/* <Button
         text="Click Me"
         onClickButton={() => console.log("I'm Clicked")}
       />
-      <ReactIcons />
+      <ReactIcons /> */}
       {/* <ListGroup
         items={items}
         heading="Cities"
