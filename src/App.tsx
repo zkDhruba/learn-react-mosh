@@ -1,19 +1,22 @@
 import { Children, useState } from "react";
-import Message from "./Message";
-import Alert from "./components/Alert";
-import Button from "./components/Button/Button";
-import ListGroup from "./components/ListGroup";
-import ReactIcons from "./components/reactIcons";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import Cart from "./components/Cart";
-import ExpandbleText from "./components/ExpandbleText";
-import Form from "./components/Form";
+import ExpenseList from "./components/expense-tracker/components/ExpenseList";
 
 function App() {
+  const [expenses, setExpenses] = useState([
+    { id: 1, description: "abc", amount: 50, category: "Utilities" },
+    { id: 2, description: "bcd", amount: 150, category: "Entertainment" },
+    { id: 3, description: "cda", amount: 250, category: "Utilities" },
+    { id: 4, description: "def", amount: 350, category: "Utilities" },
+  ]);
+
+  const handleOnDelete = (id: number) => {
+    setExpenses(expenses.filter((e) => e.id !== id));
+  };
+
   return (
     <div>
-      <Form />
+      <ExpenseList expenses={expenses} onDelete={handleOnDelete} />
     </div>
   );
 }
