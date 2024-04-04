@@ -9,11 +9,12 @@ import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import ExpandbleText from "./components/ExpandbleText";
 import Form from "./components/Form";
+import ExpenseTracker from "./components/ExpenseTracker";
 
 function App() {
   return (
     <div>
-      <Form />
+      <ExpenseTracker />
     </div>
   );
 }
