@@ -29,7 +29,11 @@ function App() {
   return (
     <div>
       <div className="mb-5">
-        <ExpenseForm></ExpenseForm>
+        <ExpenseForm
+          onSubmit={(expense) =>
+            setExpenses([...expenses, { id: expenses.length + 1, ...expense }])
+          }
+        ></ExpenseForm>
       </div>
       <div className="mb-3">
         <ExpenseFilter
