@@ -44,6 +44,20 @@ function App() {
       });
   };
 
+  const addUser = () => {
+    const originalUsers = [...users];
+    const newUser = { id: 11, name: "Ayon" };
+    setUsers([newUser, ...users]);
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/xusers", newUser)
+      .then(({ data: savedUser }) => setUsers([savedUser, ...users]))
+      .catch((err: Error) => {
+        setError(err.message);
+        setUsers(originalUsers);
+      });
+  };
+
   return (
     <>
       {error && <p className="text-danger">{error}</p>}
@@ -52,6 +66,11 @@ function App() {
           <div className="spinner-border"></div>
         </div>
       )}
+      <div className="text-end">
+        <button className="btn btn-success mb-3" onClick={addUser}>
+          Add User +
+        </button>
+      </div>
       <ul className="list-group">
         {users.map((user) => (
           <li
